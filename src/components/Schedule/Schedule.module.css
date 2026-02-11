@@ -1,9 +1,9 @@
 .wrapper {
-  overflow-x: auto;
   padding: 16px;
-  -webkit-overflow-scrolling: touch;
+  padding-bottom: env(safe-area-inset-bottom, 16px);
 }
 
+/* ===== Desktop Grid ===== */
 .grid {
   display: grid;
   grid-template-columns: 100px repeat(7, minmax(140px, 1fr));
@@ -11,7 +11,10 @@
   background: var(--color-border);
   border-radius: var(--radius);
   overflow: hidden;
-  min-width: 1080px;
+}
+
+.gridRow {
+  display: contents;
 }
 
 .cornerCell {
@@ -77,4 +80,80 @@
   padding: 4px 6px;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 4px;
+}
+
+/* Mobile cards hidden on desktop */
+.cards {
+  display: none;
+}
+
+/* ===== Mobile Card View ===== */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 12px;
+  }
+
+  .grid {
+    display: none;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .dayCard {
+    background: var(--color-surface);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cardDay {
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .cardDate {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+  }
+
+  .cardSlot {
+    padding: 0;
+  }
+
+  .cardSlotLabel {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-secondary);
+    padding: 8px 16px 0;
+  }
+
+  .cell {
+    padding: 8px 16px 12px;
+    min-height: auto;
+  }
+
+  .activity {
+    font-size: 14px;
+    padding: 8px 10px;
+    background: rgba(0, 0, 0, 0.03);
+  }
+
+  .morning .activity { background: var(--color-morning); }
+  .afternoon .activity { background: var(--color-afternoon); }
+  .evening .activity { background: var(--color-evening); }
+  .night .activity { background: var(--color-night); }
 }
