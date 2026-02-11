@@ -128,6 +128,16 @@
   opacity: 0.9;
 }
 
+.mapsRow {
+  display: flex;
+  gap: 8px;
+}
+
+.mapsRow .directionsLink {
+  flex: 1;
+  margin-bottom: 0;
+}
+
 .directionsLink {
   background: var(--color-primary-light);
   color: var(--color-primary);

@@ -7,6 +7,8 @@ interface RestaurantDetailProps {
 }
 
 export function RestaurantDetail({ restaurant, onClose }: RestaurantDetailProps) {
+  const query = encodeURIComponent(restaurant.name + ' ' + restaurant.address);
+
   return (
     <>
       <div className={styles.overlay} onClick={onClose} />
@@ -50,14 +52,24 @@ export function RestaurantDetail({ restaurant, onClose }: RestaurantDetailProps)
           </a>
         )}
 
-        <a
-          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(restaurant.name + ' ' + restaurant.address)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.directionsLink}
-        >
-          Get Directions &rarr;
-        </a>
+        <div className={styles.mapsRow}>
+          <a
+            href={`https://maps.apple.com/?q=${query}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.directionsLink}
+          >
+            Apple Maps
+          </a>
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${query}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.directionsLink}
+          >
+            Google Maps
+          </a>
+        </div>
       </div>
     </>
   );
