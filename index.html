@@ -2,13 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/nyc-trip/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>NYC Trip - April 2026</title>
-    <script type="module" crossorigin src="/nyc-trip/assets/index-CcU6FbF8.js"></script>
-    <link rel="stylesheet" crossorigin href="/nyc-trip/assets/index-DvW_DHU2.css">
+
+    <!-- PWA -->
+    <link rel="manifest" href="/nyc-trip/manifest.json" />
+    <meta name="theme-color" content="#1a73e8" />
+
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="NYC Trip" />
+    <link rel="apple-touch-icon" href="/nyc-trip/icon-192.png" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/nyc-trip/icon.svg" />
+    <script type="module" crossorigin src="/nyc-trip/assets/index-D-kt-545.js"></script>
+    <link rel="stylesheet" crossorigin href="/nyc-trip/assets/index-Bc7AperF.css">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/nyc-trip/sw.js');
+        });
+      }
+    </script>
   </body>
 </html>
