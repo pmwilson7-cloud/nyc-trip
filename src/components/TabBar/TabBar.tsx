@@ -20,7 +20,7 @@ export function TabBar({ active, onChange }: TabBarProps) {
         className={`${styles.tab} ${active === 'map' ? styles.active : ''}`}
         onClick={() => onChange('map')}
       >
-        Restaurants
+        Map
       </button>
     </nav>
   );

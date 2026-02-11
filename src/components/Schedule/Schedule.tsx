@@ -43,8 +43,7 @@ export function Schedule() {
           return (
             <div key={day.date} className={styles.dayCard}>
               <div className={styles.cardHeader}>
-                <span className={styles.cardDay}>{day.dayOfWeek}</span>
-                <span className={styles.cardDate}>Apr {new Date(day.date + 'T12:00:00').getDate()}</span>
+                <span className={styles.cardDay}>{day.dayOfWeek}, Apr {new Date(day.date + 'T12:00:00').getDate()}</span>
               </div>
               {TIME_SLOTS.map((slot) => {
                 const activities = day[slot.key].activities;
