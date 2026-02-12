@@ -3,7 +3,8 @@ import L from 'leaflet';
 import { restaurants } from '../../data/restaurants';
 import { RestaurantMarker } from './RestaurantMarker';
 import { RestaurantDetail } from './RestaurantDetail';
-import type { Restaurant } from '../../types';
+import type { Restaurant, RestaurantCategory } from '../../types';
+import { RESTAURANT_CATEGORIES } from '../../types';
 import styles from './Map.module.css';
 import 'leaflet/dist/leaflet.css';
 
@@ -15,11 +16,34 @@ const NYC_BOUNDS = new L.LatLngBounds(
 interface MapViewProps {
   selected: Restaurant | null;
   onSelect: (r: Restaurant | null) => void;
+  categoryFilter: RestaurantCategory | 'all';
+  onCategoryChange: (cat: RestaurantCategory | 'all') => void;
 }
 
-export function MapView({ selected, onSelect }: MapViewProps) {
+export function MapView({ selected, onSelect, categoryFilter, onCategoryChange }: MapViewProps) {
+  const filtered = categoryFilter === 'all'
+    ? restaurants
+    : restaurants.filter((r) => r.category === categoryFilter);
+
   return (
     <div className={styles.container}>
+      <div className={styles.filterWrapper}>
+        <select
+          className={styles.filterSelect}
+          value={categoryFilter}
+          onChange={(e) => onCategoryChange(e.target.value as RestaurantCategory | 'all')}
+        >
+          <option value="all">All Restaurants ({restaurants.length})</option>
+          {RESTAURANT_CATEGORIES.map((cat) => {
+            const count = restaurants.filter((r) => r.category === cat).length;
+            return (
+              <option key={cat} value={cat}>
+                {cat} ({count})
+              </option>
+            );
+          })}
+        </select>
+      </div>
       <MapContainer
         center={[40.775, -73.975]}
         zoom={13}
@@ -35,7 +59,7 @@ export function MapView({ selected, onSelect }: MapViewProps) {
           url="https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
           maxZoom={20}
         />
-        {restaurants.map((r) => (
+        {filtered.map((r) => (
           <RestaurantMarker
             key={r.id}
             restaurant={r}

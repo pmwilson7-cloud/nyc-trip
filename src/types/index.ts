@@ -1,8 +1,26 @@
+export type RestaurantCategory =
+  | 'American'
+  | 'Asian'
+  | 'Deli & Bagels'
+  | 'European'
+  | 'Latin American & Caribbean'
+  | 'Middle Eastern';
+
+export const RESTAURANT_CATEGORIES: RestaurantCategory[] = [
+  'American',
+  'Asian',
+  'Deli & Bagels',
+  'European',
+  'Latin American & Caribbean',
+  'Middle Eastern',
+];
+
 export interface Restaurant {
   id: number;
   name: string;
   neighborhood: string;
   cuisine: string;
+  category: RestaurantCategory;
   address: string;
   lat: number;
   lng: number;
