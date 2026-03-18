@@ -3,7 +3,7 @@ import type { DaySchedule } from '../types';
 export const schedule: DaySchedule[] = [
   {
     date: '2026-04-07',
-    dayOfWeek: 'Monday',
+    dayOfWeek: 'Tuesday',
     morning: { activities: [] },
     afternoon: { activities: ['Brigham, Rachel, Erin & Andrew arrive JFK at 4pm'] },
     evening: { activities: ['Two Strangers Carry a Cake Across New York 7:30pm (B, R)'] },
@@ -11,7 +11,7 @@ export const schedule: DaySchedule[] = [
   },
   {
     date: '2026-04-08',
-    dayOfWeek: 'Tuesday',
+    dayOfWeek: 'Wednesday',
     morning: { activities: ['Parker + Kim arrive 10:29am JFK (DL 3719)', 'The Frick Collection'] },
     afternoon: { activities: ['Ragtime 2pm (R)'] },
     evening: { activities: ['Chess @ 7:30pm (B, R, E, A, P, K)'] },
@@ -19,7 +19,7 @@ export const schedule: DaySchedule[] = [
   },
   {
     date: '2026-04-09',
-    dayOfWeek: 'Wednesday',
+    dayOfWeek: 'Thursday',
     morning: { activities: ['Oliver Jeffers at Brooklyn Museum'] },
     afternoon: { activities: ['MoMA'] },
     evening: { activities: ['Colbert Report, The Lost Boys, or a play (Giant / Proof)'] },
@@ -27,7 +27,7 @@ export const schedule: DaySchedule[] = [
   },
   {
     date: '2026-04-10',
-    dayOfWeek: 'Thursday',
+    dayOfWeek: 'Friday',
     morning: { activities: ['Harry Potter Store Experience', 'Chelsea Market', 'Google Lunch', 'High Line'] },
     afternoon: { activities: [] },
     evening: { activities: ['Dinner at Los Tacos #1', 'Harry Potter 7pm (P, K, A, E)', 'Death of a Salesman 7pm (B, R)'] },
@@ -35,7 +35,7 @@ export const schedule: DaySchedule[] = [
   },
   {
     date: '2026-04-11',
-    dayOfWeek: 'Friday',
+    dayOfWeek: 'Saturday',
     morning: { activities: ['Brigham, Rachel, Erin & Andrew depart JFK 9:30am'] },
     afternoon: { activities: [] },
     evening: { activities: [] },
@@ -43,7 +43,7 @@ export const schedule: DaySchedule[] = [
   },
   {
     date: '2026-04-12',
-    dayOfWeek: 'Saturday',
+    dayOfWeek: 'Sunday',
     morning: { activities: [] },
     afternoon: { activities: [] },
     evening: { activities: [] },
@@ -51,7 +51,7 @@ export const schedule: DaySchedule[] = [
   },
   {
     date: '2026-04-13',
-    dayOfWeek: 'Sunday',
+    dayOfWeek: 'Monday',
     morning: { activities: [] },
     afternoon: { activities: [] },
     evening: { activities: ['Parker + Kim depart 6:20pm JFK (DL 3723)'] },
