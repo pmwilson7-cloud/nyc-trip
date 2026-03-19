@@ -1,3 +1,7 @@
+export type PriceRange = '$' | '$$' | '$$$' | '$$$$';
+
+export const PRICE_RANGES: PriceRange[] = ['$', '$$', '$$$', '$$$$'];
+
 export type RestaurantCategory =
   | 'American'
   | 'Asian'
@@ -27,6 +31,7 @@ export interface Restaurant {
   phone: string;
   hours: string;
   menuUrl: string;
+  priceRange: PriceRange;
 }
 
 export interface ScheduleEntry {

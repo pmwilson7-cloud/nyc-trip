@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { TabBar, type Tab } from './components/TabBar/TabBar';
 import { Schedule } from './components/Schedule/Schedule';
 import { MapView } from './components/Map/MapView';
-import type { Restaurant, RestaurantCategory } from './types';
+import type { Restaurant, RestaurantCategory, PriceRange } from './types';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<Tab>('schedule');
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
   const [categoryFilter, setCategoryFilter] = useState<RestaurantCategory | 'all'>('all');
+  const [priceFilter, setPriceFilter] = useState<PriceRange | 'all'>('all');
 
   return (
     <>
@@ -20,6 +21,8 @@ export default function App() {
           onSelect={setSelectedRestaurant}
           categoryFilter={categoryFilter}
           onCategoryChange={setCategoryFilter}
+          priceFilter={priceFilter}
+          onPriceChange={setPriceFilter}
         />
       )}
     </>

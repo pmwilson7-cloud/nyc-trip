@@ -1,4 +1,5 @@
 import type { Restaurant } from '../types';
+// priceRange logic: $ = under ~$15pp, $$ = $15–40pp, $$$ = $40–80pp, $$$$ = $80+pp
 
 export const restaurants: Restaurant[] = [
   {
@@ -13,6 +14,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 683-2929',
     hours: 'Lunch Mon-Fri 11:30am-2:30pm; Dinner Mon 5:30-9:30pm, Tue-Fri 5:30-10pm, Sat 5-10pm, Sun 5-9:30pm',
     menuUrl: 'https://www.ililirestaurants.com/ilili-nyc-menu/',
+    priceRange: '$$$',
   },
   {
     id: 2,
@@ -26,6 +28,7 @@ export const restaurants: Restaurant[] = [
     phone: '(646) 707-0497',
     hours: 'Mon-Thu 11am-10pm, Fri-Sat 11am-11pm, Sun 11am-10pm',
     menuUrl: 'https://www.hamburgeramerica.com/menus/',
+    priceRange: '$',
   },
   {
     id: 3,
@@ -39,6 +42,7 @@ export const restaurants: Restaurant[] = [
     phone: '(646) 882-0231',
     hours: 'Daily 12-4pm; Mon-Wed & Sun 5-10pm; Thu-Sat 5-11pm',
     menuUrl: 'https://eighteightsix.com/menu',
+    priceRange: '$$',
   },
   {
     id: 4,
@@ -52,6 +56,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 254-2246',
     hours: 'Mon-Thu 8am-11pm; Open 24hrs Fri 8am through Sun 11pm',
     menuUrl: 'https://localmenu.katzsdelicatessen.com/',
+    priceRange: '$$',
   },
   {
     id: 5,
@@ -65,6 +70,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 996-2669',
     hours: 'Sun-Tue 11am-8pm; Wed-Sat 11am-10pm',
     menuUrl: 'https://sylviasrestaurant.com/',
+    priceRange: '$$',
   },
   {
     id: 6,
@@ -78,6 +84,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 777-7773',
     hours: 'Mon-Thu 5-10pm; Fri 12-4pm & 5-11pm; Sat 11am-4pm & 5-11pm; Sun 11am-4pm & 5-10pm',
     menuUrl: 'https://www.momofuku.com/restaurants/noodle-bar-east-village/menu',
+    priceRange: '$$',
   },
   {
     id: 7,
@@ -91,6 +98,7 @@ export const restaurants: Restaurant[] = [
     phone: '',
     hours: 'Wed-Sun 11:30am-9pm; Mon-Tue Closed',
     menuUrl: 'https://www.seamless.com/menu/ceres-164-mott-st-new-york/10405160',
+    priceRange: '$$',
   },
   {
     id: 8,
@@ -104,6 +112,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 858-9060',
     hours: 'Daily 11am-1am',
     menuUrl: 'https://www.handynasty.net/menu-new-york/',
+    priceRange: '$$',
   },
   {
     id: 9,
@@ -117,6 +126,7 @@ export const restaurants: Restaurant[] = [
     phone: '',
     hours: 'Wed-Thu 12-9pm; Fri-Sun 12-10pm; Mon-Tue Closed',
     menuUrl: 'https://www.carnitasramirez.com/',
+    priceRange: '$',
   },
   {
     id: 10,
@@ -130,6 +140,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 510-7256',
     hours: 'Daily 12-11pm',
     menuUrl: 'https://www.mamastoo.com/',
+    priceRange: '$',
   },
   {
     id: 11,
@@ -143,6 +154,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 812-1482',
     hours: 'Mon-Wed 5-11pm; Thu-Fri 5pm-3am; Sat 12-4pm & 5pm-3am; Sun 12-11pm',
     menuUrl: 'https://www.misslilys.com/east-village-7a/',
+    priceRange: '$$',
   },
   {
     id: 12,
@@ -156,6 +168,7 @@ export const restaurants: Restaurant[] = [
     phone: '(646) 901-5644',
     hours: 'Tue-Fri 5-10:30pm; Sat-Sun 12-3pm & 5-10:30pm; Mon Closed',
     menuUrl: 'https://www.wenwenbrooklyn.com/menu',
+    priceRange: '$$',
   },
   {
     id: 13,
@@ -169,6 +182,7 @@ export const restaurants: Restaurant[] = [
     phone: '(646) 861-3859',
     hours: 'Mon & Wed-Fri 5-10:30pm; Sat-Sun 12-3pm & 5-10:30pm; Tue Closed',
     menuUrl: 'https://baazi.us/menu-1',
+    priceRange: '$$',
   },
   {
     id: 14,
@@ -182,6 +196,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 977-7700',
     hours: 'Mon-Thu 11:30am-10:30pm; Fri 11:30am-11:30pm; Sat 11am-11:30pm; Sun 11am-10:30pm',
     menuUrl: 'https://rosamexicano.com/menus/',
+    priceRange: '$$$',
   },
   {
     id: 15,
@@ -195,6 +210,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 496-9100',
     hours: 'Mon-Fri 11am-10pm; Sat-Sun 9am-10pm',
     menuUrl: 'https://www.maisonpickle.com/menus/',
+    priceRange: '$$',
   },
   {
     id: 16,
@@ -208,6 +224,7 @@ export const restaurants: Restaurant[] = [
     phone: '(917) 261-7430',
     hours: 'Mon-Thu 12-10pm; Fri 12-11pm; Sat 10am-11pm; Sun 10am-10pm',
     menuUrl: 'https://www.chamamama.com/menus/',
+    priceRange: '$$',
   },
   {
     id: 17,
@@ -221,6 +238,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 724-4707',
     hours: 'Tue-Fri 8:30am-4pm; Sat-Sun 8:30am-5pm; Mon Closed',
     menuUrl: 'https://www.barneygreengrass.com/pages/restaurant-menu-specialties',
+    priceRange: '$$',
   },
   {
     id: 18,
@@ -234,6 +252,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 470-5566',
     hours: 'Mon-Fri 10am-12am; Sat-Sun 9am-12am',
     menuUrl: 'https://www.jacobspickles.com/upper-west-side-menus/',
+    priceRange: '$$',
   },
   {
     id: 19,
@@ -247,6 +266,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 932-2052',
     hours: 'Daily 6am-3pm',
     menuUrl: 'https://www.allmenus.com/ny/new-york/285953-absolute-bagels/menu/',
+    priceRange: '$',
   },
   {
     id: 20,
@@ -260,6 +280,7 @@ export const restaurants: Restaurant[] = [
     phone: '(347) 527-1505',
     hours: 'Mon-Thu 10am-4am; Fri-Sat 10am-5am; Sun 10am-4am',
     menuUrl: 'https://thehalalguys.com/menu/',
+    priceRange: '$',
   },
   {
     id: 21,
@@ -273,6 +294,7 @@ export const restaurants: Restaurant[] = [
     phone: '(646) 974-1408',
     hours: 'Mon-Thu 11:30am-11pm; Fri-Sat 11:30am-11:30pm; Sun 11:30am-11pm',
     menuUrl: 'https://sugarfishsushi.com/food-menus/new-york-menus-nyb/',
+    priceRange: '$$$',
   },
   {
     id: 22,
@@ -286,6 +308,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 932-7722',
     hours: 'Mon-Thu 11am-10:30pm; Fri-Sat 11am-11pm; Sun 11am-10:30pm',
     menuUrl: 'https://www.kokowingsnyc.com/upperwestside-menu',
+    priceRange: '$$',
   },
   {
     id: 23,
@@ -299,6 +322,7 @@ export const restaurants: Restaurant[] = [
     phone: '(646) 678-3859',
     hours: 'Daily 12-9pm',
     menuUrl: 'https://www.ivanramen.com/menu/',
+    priceRange: '$$',
   },
   {
     id: 24,
@@ -312,6 +336,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 539-1776',
     hours: 'Dinner daily 5:30-9:30pm; Lunch Sat-Sun 11:30am-2pm',
     menuUrl: 'https://www.bluehillfarm.com/family-meal',
+    priceRange: '$$$$',
   },
   {
     id: 25,
@@ -325,6 +350,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 744-0585',
     hours: 'Mon-Sat 11:30am-3am; Sun 11:30am-1am',
     menuUrl: 'https://jgmelon-nyc.com/menu',
+    priceRange: '$$',
   },
   {
     id: 26,
@@ -338,6 +364,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 965-1414',
     hours: 'Mon-Fri 7:30am-12am; Sat 9am-1am; Sun 9am-11pm',
     menuUrl: 'https://balthazarny.com/menus/',
+    priceRange: '$$$',
   },
   {
     id: 27,
@@ -351,6 +378,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 877-6000',
     hours: 'Daily 7am-10pm',
     menuUrl: 'https://www.jubileeriverside.com/',
+    priceRange: '$',
   },
   {
     id: 28,
@@ -364,6 +392,7 @@ export const restaurants: Restaurant[] = [
     phone: '(833) 674-5878',
     hours: 'Tue-Thu 6-10pm; Fri-Sat 12-4pm & 6-10pm; Sun-Mon Closed',
     menuUrl: 'https://www.banhanhem.com/s/order',
+    priceRange: '$$',
   },
   {
     id: 29,
@@ -377,6 +406,7 @@ export const restaurants: Restaurant[] = [
     phone: '(212) 529-8880',
     hours: 'Mon-Wed 5-10pm; Thu-Fri 12-10pm; Sat 10am-4pm & 5-10pm; Sun 10am-4pm',
     menuUrl: 'https://www.yellowrosenyc.com/menus/',
+    priceRange: '$$',
   },
   {
     id: 30,
@@ -390,6 +420,7 @@ export const restaurants: Restaurant[] = [
     phone: '(347) 715-8155',
     hours: 'Tue-Sat 5-10pm; Sun-Mon Closed',
     menuUrl: 'https://www.lechenenyc.com/menu',
+    priceRange: '$$$',
   },
   {
     id: 31,
@@ -403,6 +434,7 @@ export const restaurants: Restaurant[] = [
     phone: '(646) 422-7592',
     hours: 'Daily 9am-8pm',
     menuUrl: 'https://www.thesandwichboard.co/menu',
+    priceRange: '$',
   },
   {
     id: 33,
@@ -416,6 +448,7 @@ export const restaurants: Restaurant[] = [
     phone: '',
     hours: 'Wed-Sun 11:30am-4pm; Mon-Tue Closed',
     menuUrl: 'https://salthanks.com/',
+    priceRange: '$',
   },
   {
     id: 34,
@@ -429,6 +462,7 @@ export const restaurants: Restaurant[] = [
     phone: '(646) 422-7466',
     hours: 'Mon-Thu 5:30-11pm; Fri-Sat 5-12am; Sun 5-10:30pm',
     menuUrl: 'https://ariarinyc.com/menu',
+    priceRange: '$$',
   },
   {
     id: 32,
@@ -442,5 +476,6 @@ export const restaurants: Restaurant[] = [
     phone: '(646) 301-7968',
     hours: 'Mon-Fri 7:30am-4:30pm; Sat-Sun 8am-5pm',
     menuUrl: 'https://www.libraebakery.com/menu/',
+    priceRange: '$',
   },
 ];

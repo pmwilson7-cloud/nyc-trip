@@ -15,6 +15,9 @@
   top: 12px;
   right: 12px;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .filterSelect {
@@ -40,9 +43,9 @@
   border-color: var(--color-primary);
 }
 
-/* Push Leaflet zoom controls below the filter dropdown */
+/* Push Leaflet zoom controls below the two filter dropdowns */
 .container :global(.leaflet-top.leaflet-right) {
-  top: 48px;
+  top: 96px;
 }
 
 .overlay {

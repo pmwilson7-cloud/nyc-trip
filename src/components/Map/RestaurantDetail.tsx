@@ -17,7 +17,7 @@ export function RestaurantDetail({ restaurant, onClose }: RestaurantDetailProps)
           &times;
         </button>
         <h2 className={styles.name}>{restaurant.name}</h2>
-        <p className={styles.cuisine}>{restaurant.cuisine}</p>
+        <p className={styles.cuisine}>{restaurant.cuisine} · {restaurant.priceRange}</p>
         <p className={styles.neighborhood}>{restaurant.neighborhood}</p>
 
         <div className={styles.info}>

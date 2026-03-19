@@ -3,8 +3,8 @@ import L from 'leaflet';
 import { restaurants } from '../../data/restaurants';
 import { RestaurantMarker } from './RestaurantMarker';
 import { RestaurantDetail } from './RestaurantDetail';
-import type { Restaurant, RestaurantCategory } from '../../types';
-import { RESTAURANT_CATEGORIES } from '../../types';
+import type { Restaurant, RestaurantCategory, PriceRange } from '../../types';
+import { RESTAURANT_CATEGORIES, PRICE_RANGES } from '../../types';
 import styles from './Map.module.css';
 import 'leaflet/dist/leaflet.css';
 
@@ -18,12 +18,16 @@ interface MapViewProps {
   onSelect: (r: Restaurant | null) => void;
   categoryFilter: RestaurantCategory | 'all';
   onCategoryChange: (cat: RestaurantCategory | 'all') => void;
+  priceFilter: PriceRange | 'all';
+  onPriceChange: (price: PriceRange | 'all') => void;
 }
 
-export function MapView({ selected, onSelect, categoryFilter, onCategoryChange }: MapViewProps) {
-  const filtered = categoryFilter === 'all'
-    ? restaurants
-    : restaurants.filter((r) => r.category === categoryFilter);
+export function MapView({ selected, onSelect, categoryFilter, onCategoryChange, priceFilter, onPriceChange }: MapViewProps) {
+  const filtered = restaurants.filter((r) => {
+    if (categoryFilter !== 'all' && r.category !== categoryFilter) return false;
+    if (priceFilter !== 'all' && r.priceRange !== priceFilter) return false;
+    return true;
+  });
 
   return (
     <div className={styles.container}>
@@ -33,12 +37,27 @@ export function MapView({ selected, onSelect, categoryFilter, onCategoryChange }
           value={categoryFilter}
           onChange={(e) => onCategoryChange(e.target.value as RestaurantCategory | 'all')}
         >
-          <option value="all">All Restaurants ({restaurants.length})</option>
+          <option value="all">All Cuisines ({restaurants.length})</option>
           {RESTAURANT_CATEGORIES.map((cat) => {
             const count = restaurants.filter((r) => r.category === cat).length;
             return (
               <option key={cat} value={cat}>
                 {cat} ({count})
+              </option>
+            );
+          })}
+        </select>
+        <select
+          className={styles.filterSelect}
+          value={priceFilter}
+          onChange={(e) => onPriceChange(e.target.value as PriceRange | 'all')}
+        >
+          <option value="all">All Prices</option>
+          {PRICE_RANGES.map((price) => {
+            const count = restaurants.filter((r) => r.priceRange === price).length;
+            return (
+              <option key={price} value={price}>
+                {price} ({count})
               </option>
             );
           })}
